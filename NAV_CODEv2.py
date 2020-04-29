@@ -48,7 +48,8 @@ def detect():
         for x in range(16):
             d = maze[x][y]
             show_num(y * constant + k, x * constant + k, str(d))
-
+            if d == 'w':
+                pygame.draw.rect(screen, (0, 0, 0), [y * constant, x * constant, 37.5, 37.5])
 
 def fill():
     check_t = True
