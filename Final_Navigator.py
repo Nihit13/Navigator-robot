@@ -143,9 +143,9 @@ screen = pygame.display.set_mode((600, 650))
 
 # Setting the caption and the font for the pygame window
 pygame.display.set_caption("Navigator Grid")
-font = pygame.font.Font('Showcard Gothic', 15)
-font2 = pygame.font.Font('Showcard Gothic', 15)
-font3 = pygame.font.Font('Showcard Gothic' , 30 )
+font = pygame.font.SysFont('Showcard Gothic', 15)
+font2 = pygame.font.SysFont('Showcard Gothic', 15)
+font3 = pygame.font.SysFont('Showcard Gothic' , 30 )
 
 
 # The fill function writes the numbers into the grid
