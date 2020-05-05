@@ -143,9 +143,9 @@ screen = pygame.display.set_mode((600, 650))
 
 # Setting the caption and the font for the pygame window
 pygame.display.set_caption("Navigator Grid")
-font = pygame.font.Font('JandaManateeSolid.ttf', 15)
-font2 = pygame.font.Font('JandaManateeSolid.ttf', 18)
-font3 = pygame.font.Font('SHOWG.ttf' , 30 )
+font = pygame.font.Font('Showcard Gothic', 15)
+font2 = pygame.font.Font('Showcard Gothic', 15)
+font3 = pygame.font.Font('Showcard Gothic' , 30 )
 
 
 # The fill function writes the numbers into the grid
@@ -558,8 +558,8 @@ def path_finder(start, close):
                 wall_detect()
                 num_detect()
                 robot = pygame.image.load('Robot.png')
-                pygame.transform.scale(robot, (75, 75))
-                screen.blit(robot, (s_col * constant - 3, s_row * constant - 3))
+                robot = pygame.transform.scale(robot, (38, 38))
+                screen.blit(robot, (s_col * constant, s_row * constant))
 
                 write(0, 610, 'Press any key to show the path of the robot to the target cell ',(40, 185, 50))
                 pygame.display.update()
