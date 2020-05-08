@@ -310,7 +310,6 @@ def start_screen(close):
             if event.type == pygame.KEYDOWN:
                 if event.key == pygame.K_o:
                     pressed = True
-                    running = False
 
 
         (x, y) = pygame.mouse.get_pos()
@@ -601,13 +600,17 @@ def path_finder(start, close):
 while not close:
     returning = start_screen(close)
     close = returning[0]
-    pressed = returning[1]
-    if pressed:
+    pressO = returning[1]
+    if pressO:
         filesize = os.path.getsize('Save.txt')
+
         if filesize != 0:
             with open('Save.txt', 'rb') as fp:
                 s = pickle.load(fp)
             maze_wall = s
+    else:
+        wall_revert()
+
     close = select_target(close)
     maze[t_row][t_col] = 0
     list = click_detect(close)
@@ -615,6 +618,5 @@ while not close:
     start = select_start(close)
     start[2] = close
     path_finder(start, close)
-    if list == False :
-        maze_wall = wall_revert()
+
     complete_revert()
